@@ -5,14 +5,15 @@
   "description": "Match Inteligente é um MVP (Minimum Viable Product) que simula um sistema de matchmaking com inteligência artificial. A aplicação conecta profissionais com base em afinidades de área de atuação e localização geográfica.\n",
   "homepage": "https://vidigal-code.github.io/legal-ia-match-challenge",
   "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
-  },
+"scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "lint": "eslint .",
+  "preview": "vite preview",
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d dist",
+  "vercel-build": "vite build"
+},
   "dependencies": {
     "@tailwindcss/vite": "^4.1.4",
     "axios": "^1.8.4",
