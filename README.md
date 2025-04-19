@@ -49,7 +49,7 @@ src/
 
 ## Algoritmo de Matching
 
-O algoritmo principal de matchmaking está implementado na página `Match.tsx` e funciona da seguinte forma:
+O algoritmo principal de matchmaking está implementado nos arquivos `FunctionsMatchSearch.ts e Match.tsx.` e funciona da seguinte forma:
 
 1. **Coleta de dados**: Usuário preenche seu nome, área de interesse e localização
 2. **Filtragem inicial**: Remove o próprio usuário da lista de possíveis matches
