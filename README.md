@@ -68,32 +68,43 @@ Esta função é responsável por processar o formulário e encontrar os melhore
 
 ```typescript
 const findMatches = (): void => {
-    // Validação dos campos
-     if (!formData.name) {
-         setErrorMessage("Por favor, preencha o campo de nome.");
-         return;
-        }
 
-      if (!formData.area) {
-          setErrorMessage("Por favor, selecione sua área de interesse.");
-           return;
-        }
+    /** Verifica se o campo "nome" foi preenchido */
+    if (!formData.name) {
+        setErrorMessage("Por favor, preencha o campo de nome.");
+        return;
+    }
 
-       if (!formData.location) {
-          setErrorMessage("Por favor, informe sua localização.");
-          return;
-        }
+    /** Verifica se o campo "área de interesse" foi selecionado */
+    if (!formData.area) {
+        setErrorMessage("Por favor, selecione sua área de interesse.");
+        return;
+    }
 
+    /** Verifica se o campo "localização" foi informado */
+    if (!formData.location) {
+        setErrorMessage("Por favor, informe sua localização.");
+        return;
+    }
+
+    /** Inicia o carregamento e oculta os resultados anteriores */
     setIsLoading(true);
     setShowResults(false);
     setErrorMessage(null);
 
+    /** Simula um tempo de processamento antes de buscar os matches */
     setTimeout(() => {
-        // Filtra o próprio usuário da lista
+
+        /**
+         * Filtra as pessoas removendo o próprio usuário (baseado no nome)
+         */
         const filteredMatches = PotentialPeopleResults.filter(person =>
             person.name.toLowerCase() !== formData.name.toLowerCase()
         );
 
+        /**
+         * Se não houver nenhum match possível, define lista vazia e mostra o resultado
+         */
         if (filteredMatches.length === 0) {
             setMatches([]);
             setIsLoading(false);
@@ -101,17 +112,22 @@ const findMatches = (): void => {
             return;
         }
 
-        // Calcula afinidade para cada potencial match
+        /**
+         * Mapeia os resultados com um score de afinidade
+         */
         const matchesWithAffinity: PeoplesAffinityMatch[] = filteredMatches.map(person => ({
             ...person,
             affinity: calculateAffinityScore(person)
         }));
 
-        // Seleciona os melhores matches
+        /**
+         * Ordena os matches pela maior afinidade e limita a quantidade com base na configuração
+         */
         const topMatches = matchesWithAffinity
             .sort((a, b) => b.affinity - a.affinity)
             .slice(0, VITE_API_MATCH_HOW_MANY_WERE_FOUND);
 
+        /** Define os matches finais e exibe os resultados */
         setMatches(topMatches);
         setIsLoading(false);
         setShowResults(true);
