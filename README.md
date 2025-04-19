@@ -28,17 +28,23 @@ Match Inteligente é um MVP (Minimum Viable Product) que simula um sistema de ma
 ```
 src/
 ├── api/
-│   └── Api.ts            # Funções para chamadas de API
+│   └── Api.ts                  # Funções de chamada para APIs externas/internas
+│
 ├── components/
 │   └── footer/
-│       └── Footer.tsx    # Componente de rodapé reutilizável
+│       └── Footer.tsx          # Componente reutilizável de rodapé
+│
 ├── pages/
-│   ├── LandingPage.tsx   # Página inicial com descrição do serviço
-│   ├── Match.tsx         # Página principal com formulário e resultados
-│   └── RouteNotFound.tsx # Página 404 personalizada
+│   ├── LandingPage.tsx         # Página inicial com descrição do serviço
+│   ├── Match.tsx               # Página principal com formulário e resultados de busca
+│   └── RouteNotFound.tsx       # Página personalizada para rotas inexistentes (404)
+│
 ├── types/
-│   └── Interface.ts      # Interfaces e tipos do TypeScript
-└── main.tsx              # Ponto de entrada da aplicação
+│   ├── FunctionsMatchSearch.ts # Tipos e funções relacionadas ao simulador de busca com IA
+│   └── Interface.ts            # Definição de interfaces e tipos compartilhados
+│
+└── main.tsx                    # Ponto de entrada da aplicação React
+
 ```
 
 ## Algoritmo de Matching
