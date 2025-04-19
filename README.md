@@ -28,7 +28,7 @@ Match Inteligente é um MVP (Minimum Viable Product) que simula um sistema de ma
 ```
 src/
 ├── api/
-│   └── api.ts            # Funções para chamadas de API
+│   └── Api.ts            # Funções para chamadas de API
 ├── components/
 │   └── footer/
 │       └── Footer.tsx    # Componente de rodapé reutilizável
@@ -37,7 +37,7 @@ src/
 │   ├── Match.tsx         # Página principal com formulário e resultados
 │   └── RouteNotFound.tsx # Página 404 personalizada
 ├── types/
-│   └── interface.ts      # Interfaces e tipos do TypeScript
+│   └── Interface.ts      # Interfaces e tipos do TypeScript
 └── main.tsx              # Ponto de entrada da aplicação
 ```
 
