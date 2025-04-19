@@ -2,7 +2,7 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 
-import './index.css';
+import './Index.css';
 import Match from "./pages/Match.tsx";
 import RouteNotFound from "./pages/RouteNotFound.tsx";
 import LandingPage from "./pages/LandingPage.tsx";

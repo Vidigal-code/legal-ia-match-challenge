@@ -1,5 +1,5 @@
 import {useNavigate} from 'react-router-dom';
-import {FeatureCardPropsLandingPage, logo} from "../types/interface.ts";
+import {FeatureCardPropsLandingPage, logo} from "../types/Interface.ts";
 import Footer from "../components/footer/Footer.tsx";
 import React from "react";
 
