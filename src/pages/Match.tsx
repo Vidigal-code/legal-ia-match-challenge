@@ -9,7 +9,7 @@ import {
 import {useNavigate} from "react-router-dom";
 import {getAreaDatas, getPeopleDatas} from "../api/Api.ts";
 import Footer from "../components/footer/Footer.tsx";
-import {findMatches} from "../types/FunctionsMatch.ts";
+import {findMatches} from "../types/FunctionsMatchSearch.ts";
 
 
 const Match: React.FC = () => {
