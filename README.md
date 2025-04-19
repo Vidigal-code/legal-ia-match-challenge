@@ -69,10 +69,20 @@ Esta função é responsável por processar o formulário e encontrar os melhore
 ```typescript
 const findMatches = (): void => {
     // Validação dos campos
-    if (!formData.name || !formData.area || !formData.location) {
-        setErrorMessage("Por favor, preencha todos os campos");
-        return;
-    }
+     if (!formData.name) {
+         setErrorMessage("Por favor, preencha o campo de nome.");
+         return;
+        }
+
+      if (!formData.area) {
+          setErrorMessage("Por favor, selecione sua área de interesse.");
+           return;
+        }
+
+       if (!formData.location) {
+          setErrorMessage("Por favor, informe sua localização.");
+          return;
+        }
 
     setIsLoading(true);
     setShowResults(false);
