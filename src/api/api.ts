@@ -1,5 +1,4 @@
-import axios from "axios";
-import {AreasDataMatch, AreaDataMatchResponse, PeoplesDataMatch, PeopleDataMatchResponse} from "../types/interface.ts";
+import { AreasDataMatch, AreaDataMatchResponse, PeoplesDataMatch, PeopleDataMatchResponse } from "../types/interface.ts";
 
 const VITE_API_MATCH_PEOPLES_DATA: string = import.meta.env.VITE_API_MATCH_PEOPLES_DATA;
 const VITE_API_MATCH_AREAS_DATA: string = import.meta.env.VITE_API_MATCH_AREAS_DATA;
@@ -7,12 +6,15 @@ const VITE_API_MATCH_AREAS_DATA: string = import.meta.env.VITE_API_MATCH_AREAS_D
 export function getPeopleDatas(
     setPotentialPeopleResults: (data: PeoplesDataMatch[]) => void,
 ): void {
-    axios.get<PeopleDataMatchResponse>(VITE_API_MATCH_PEOPLES_DATA)
-        .then((response) => {
-            if (response.data && response.data.peopledatas) {
-                setPotentialPeopleResults(response.data.peopledatas);
+    fetch(VITE_API_MATCH_PEOPLES_DATA)
+        .then(response => {
+            if (!response.ok) throw new Error(`Erro HTTP: ${response.status}`);
+            return response.json();
+        })
+        .then((data: PeopleDataMatchResponse) => {
+            if (data && data.peopledatas) {
+                setPotentialPeopleResults(data.peopledatas);
             }
-            return;
         })
         .catch((error) => {
             console.error('Erro ao buscar os dados:', error);
@@ -22,16 +24,17 @@ export function getPeopleDatas(
 export function getAreaDatas(
     setPotentialAreaDataResults: (data: AreasDataMatch[]) => void,
 ): void {
-    axios.get<AreaDataMatchResponse>(VITE_API_MATCH_AREAS_DATA)
-        .then((response) => {
-            if (response.data && response.data.areadatas) {
-                setPotentialAreaDataResults(response.data.areadatas);
+    fetch(VITE_API_MATCH_AREAS_DATA)
+        .then(response => {
+            if (!response.ok) throw new Error(`Erro HTTP: ${response.status}`);
+            return response.json();
+        })
+        .then((data: AreaDataMatchResponse) => {
+            if (data && data.areadatas) {
+                setPotentialAreaDataResults(data.areadatas);
             }
-            return;
         })
         .catch((error) => {
             console.error('Erro ao buscar os dados:', error);
         });
 }
-
-
