@@ -6,6 +6,8 @@ Match Inteligente é um MVP (Minimum Viable Product) que simula um sistema de ma
 
 ![Match Inteligente Logo](public/assets/operadoralegal_logo.jpg)
 
+Vercel Projeto Link: https://legal-ia-match-challenge.vercel.app/
+
 ## Funcionalidades
 
 - Formulário de cadastro com nome, área de interesse e localização
