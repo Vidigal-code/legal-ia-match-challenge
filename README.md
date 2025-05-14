@@ -4,7 +4,7 @@
 
 Match Inteligente é um MVP (Minimum Viable Product) que simula um sistema de matchmaking com inteligência artificial. A aplicação conecta profissionais com base em afinidades de área de atuação e localização geográfica.
 
-![Match Inteligente Logo](public/assets/operadoralegal_logo.jpg)
+![Match Inteligente Logo](https://github.com/Vidigal-code/legal-ia-match-challenge/blob/main/public/assets/operadoralegal_logo.jpg?raw=true)
 
 
 ## Funcionalidades
